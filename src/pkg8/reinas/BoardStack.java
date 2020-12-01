@@ -110,20 +110,11 @@ public class BoardStack {
         removeQueen(queen.getRow(), queen.getColumn());
     }
 
-    public int getQueens() {
-        return queens;
-    }
-
-    public int[][] getBoard() {
-        return board;
-    }
-
     public void printBoard() {
-        Helpers.logLn("\n");
         for (int row = 0; row < queens; row++) {
             for (int column = 0; column < queens; column++) {
                 if (hasQueenInBox(row, column)) {
-                    Helpers.log("q ");
+                    Helpers.log("Q ");
                 } else {
                     Helpers.log("# ");
                 }
