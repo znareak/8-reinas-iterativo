@@ -33,65 +33,37 @@ public class BoardStack {
 
     public boolean isGoodRow(int row) {
         for (int column = 0; column < queens; column++) {
-            if (board[row][column] == 1) return false;
+            if (board[row][column] == 1) {
+                return false;
+            }
         }
         return true;
     }
 
     public boolean isGoodColumn(int column) {
         for (int row = 0; row < queens; row++) {
-            if ( board[row][column] == 1) return false;
+            if (board[row][column] == 1) {
+                return false;
+            }
         }
         return true;
     }
 
     public boolean isGoodDiagonal1(Queen queen) {
-        int row = queen.getRow();
-        int column = queen.getColumn();
-        while ((row != -1) && (column != -1)) {
-
+        for (int row = queen.getRow(), column = queen.getColumn(); row >= 0 && column >= 0; row--, column--) {
             if (board[row][column] == 1) {
                 return false;
             }
-            row--;
-            column--;
         }
-        row = queen.getRow();
-        column = queen.getColumn();
-        while ((row < queens) && (column < queens)) {
-
-            if (board[row][column] == 1) {
-                return false;
-            }
-            row++;
-            column++;
-        }
-
         return true;
     }
 
     public boolean isGoodDiagonal2(Queen queen) {
-        int row = queen.getRow();
-        int column = queen.getColumn();
-        while ((row != -1) && (column < queens)) {
-
+        for (int row = queen.getRow(), column = queen.getColumn(); row >= 0 && column < queens; row--, column++) {
             if (board[row][column] == 1) {
                 return false;
             }
-            row--;
-            column++;
         }
-        row = queen.getRow();
-        column = queen.getColumn();
-        while ((row < queens) && (column >= 0)) {
-
-            if (board[row][column] == 1) {
-                return false;
-            }
-            row++;
-            column--;
-        }
-
         return true;
     }
 

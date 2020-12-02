@@ -14,9 +14,9 @@ public class MainProgram {
     public MainProgram(int q) {
         queens = q;
         board = new BoardStack(q);
-        /*while(queen != null)
-            solutions();*/
-        solutions();
+        while(queen != null)
+            solutions();
+        //solutions();
     }
 
     private void solutions() {
@@ -51,6 +51,6 @@ public class MainProgram {
         }
         row = queen.getRow();
         column = queen.getColumn();
-        solutions();
+        //solutions();
     }
 }
